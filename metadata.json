@@ -1,0 +1,7 @@
+{
+  "name": "Dr. Veda Wellness - Ayurvedic Healing",
+  "description": "A holistic Ayurvedic wellness platform featuring expert consultations, natural treatments, and a curated shop of herbal remedies.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
