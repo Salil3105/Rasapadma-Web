@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useEffect } from 'react';
 import {
   Routes,
@@ -209,7 +204,7 @@ function PaymentWrapper() {
     <Payment
       orderData={orderData}
       onBack={() => navigate('/checkout', { state: { orderData } })}
-      onSuccess={() => {
+      onSuccess={async () => {
         const orderItems = cartItems
           .map((item) => {
             const product = PRODUCTS.find((p) => p.id === item.productId);
@@ -230,7 +225,7 @@ function PaymentWrapper() {
           quantity: number;
           image: string;
         }[];
-        const order = addOrder({
+        const order = await addOrder({
           items: orderItems,
           subtotal: orderData.subtotal,
           shipping: orderData.shipping,

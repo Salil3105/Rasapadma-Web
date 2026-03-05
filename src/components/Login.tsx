@@ -12,6 +12,11 @@ interface LoginProps {
 export const Login = ({ onSuccess, onBack }: LoginProps) => {
   const navigate = useNavigate();
   const { user, sendOTP, verifyOTP, isLoading } = useAuth();
+  const [step, setStep] = useState<'phone' | 'otp'>('phone');
+  const [phone, setPhone] = useState('');
+  const [otp, setOtp] = useState('');
+  const [error, setError] = useState('');
+  const [resendCooldown, setResendCooldown] = useState(0);
 
   useEffect(() => {
     if (user) {
@@ -20,11 +25,6 @@ export const Login = ({ onSuccess, onBack }: LoginProps) => {
   }, [user, onSuccess, navigate]);
 
   if (user) return null;
-  const [step, setStep] = useState<'phone' | 'otp'>('phone');
-  const [phone, setPhone] = useState('');
-  const [otp, setOtp] = useState('');
-  const [error, setError] = useState('');
-  const [resendCooldown, setResendCooldown] = useState(0);
 
   const handleSendOTP = async (e: React.FormEvent) => {
     e.preventDefault();

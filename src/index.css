@@ -45,6 +45,12 @@ html.dark {
   html.dark body {
     @apply bg-background-dark text-slate-200;
   }
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+  /* Icons that are directly clickable should use role="button"
+     or a utility class like cursor-pointer so they also get the pointer cursor. */
 }
 
 @layer utilities {

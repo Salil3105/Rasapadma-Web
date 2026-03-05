@@ -197,7 +197,10 @@ export const Home = ({
       </section>
 
       {/* About Section */}
-      <section className='py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-slate-50/50 dark:bg-slate-900/30' id='about'>
+      <section
+        className='py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-slate-50/50 dark:bg-slate-900/30'
+        id='about'
+      >
         <div className='absolute right-0 top-1/4 w-1/3 h-full bg-primary/5 dark:bg-slate-800/30 rounded-l-3xl -z-10'></div>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16'>
@@ -274,7 +277,10 @@ export const Home = ({
       </section>
 
       {/* Services Section - Our Specialized Treatments */}
-      <section className='py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-900/50' id='services'>
+      <section
+        className='py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-900/50'
+        id='services'
+      >
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-8 sm:mb-10'>
             <div>
@@ -377,7 +383,7 @@ export const Home = ({
       {/* CTA Section */}
       <section className='py-12 sm:py-16 lg:py-20'>
         <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='relative bg-primary rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 overflow-hidden text-center shadow-2xl dark:bg-slate-800 dark:border dark:border-primary/40 dark:shadow-2xl dark:shadow-primary/5'>
+          <div className='relative bg-primary rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 overflow-hidden text-center shadow-2xl dark:bg-slate-800 dark:border dark:border-primary/40 dark:shadow-2xl dark:shadow-primary/5'>
             <div className='absolute top-0 left-0 -mt-10 -ml-10 w-40 h-40 bg-white/10 rounded-full blur-2xl dark:bg-primary/10'></div>
             <div className='absolute bottom-0 right-0 -mb-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-2xl dark:bg-primary/10'></div>
             <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white dark:text-white mb-4 relative z-10'>
