@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, ArrowLeft, Loader2, Leaf } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import doctor from '../content/doctor.json';
 
 interface LoginProps {
   onSuccess?: () => void;
@@ -89,7 +90,9 @@ export const Login = ({ onSuccess, onBack }: LoginProps) => {
             <div className="inline-flex p-3 rounded-full bg-primary/10 dark:bg-primary/20 mb-3">
               <Leaf className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-xl font-bold text-slate-900 dark:text-white">Welcome to Dr. Veda Wellness</h1>
+            <h1 className="text-xl font-bold text-slate-900 dark:text-white">
+              {doctor.loginHeading}
+            </h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Sign in with your mobile number</p>
           </div>
 

@@ -4,6 +4,7 @@ import { Search, ShoppingBag, Grid, List, Star, Heart, ShoppingCart, UserCheck, 
 import { PRODUCTS } from '../constants';
 import { ImageWithFallback } from './ImageWithFallback';
 import { useCart } from '../context/CartContext';
+import doctor from '../content/doctor.json';
 
 interface ShopProps {
   onProductClick?: (productId: string) => void;
@@ -81,7 +82,7 @@ export const Shop = ({ onProductClick }: ShopProps) => {
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-slate-400">Doctor Formulated</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Natural Healing, <br /><span className="text-primary">Backed by Science</span></h2>
-            <p className="text-sm sm:text-base text-gray-600 dark:text-slate-300 mb-4">Authentic Ayurvedic formulations curated by Dr. Veda (MD, BAMS) for your holistic well-being.</p>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-slate-300 mb-4">{doctor.productTagline}</p>
             <button 
               onClick={() => document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary hover:bg-primary-dark text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-sm sm:text-base font-medium transition-colors shadow-md sm:shadow-lg shadow-primary/20 inline-flex items-center gap-1.5 w-fit"
@@ -183,7 +184,7 @@ export const Shop = ({ onProductClick }: ShopProps) => {
                   <p className="text-[11px] text-gray-600 dark:text-slate-300 leading-snug">
                     "For best results with immunity boosters, consume with warm water or honey first thing in the morning."
                   </p>
-                  <p className="text-[10px] text-primary font-medium mt-1">- Dr. Veda</p>
+                  <p className="text-[10px] text-primary font-medium mt-1">{doctor.doctorTipSignature}</p>
                 </div>
               </div>
             </div>
@@ -271,7 +272,7 @@ export const Shop = ({ onProductClick }: ShopProps) => {
                           <p className="text-[11px] text-gray-600 dark:text-slate-300 leading-snug">
                             "For best results with immunity boosters, consume with warm water or honey first thing in the morning."
                           </p>
-                          <p className="text-[10px] text-primary font-medium mt-1">- Dr. Veda</p>
+                          <p className="text-[10px] text-primary font-medium mt-1">{doctor.doctorTipSignature}</p>
                         </div>
                       </div>
                     </div>
@@ -423,7 +424,7 @@ export const Shop = ({ onProductClick }: ShopProps) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { icon: Flower2, title: '100% Natural Ingredients', desc: 'Sourced directly from certified organic farms.' },
-              { icon: Stethoscope, title: 'Doctor Verified', desc: 'Formulated and tested by Dr. Veda (MD, BAMS).' },
+              { icon: Stethoscope, title: 'Doctor Verified', desc: doctor.verifiedLine },
               { icon: Verified, title: 'GMP Certified', desc: 'Manufactured in certified, sterile facilities.' },
             ].map((item, i) => (
               <motion.div

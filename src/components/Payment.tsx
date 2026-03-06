@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, CreditCard, Smartphone, CheckCircle, Shield } from 'lucide-react';
 import type { OrderData } from './Checkout';
+import clinic from '../content/clinic.json';
 
 const formatPrice = (amount: number) =>
   `₹${amount.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
@@ -162,7 +163,9 @@ export const Payment = ({ orderData, onBack, onSuccess }: PaymentProps) => {
           )}
 
           {method === 'cod' && (
-            <p className="text-slate-600 dark:text-slate-400 text-sm">Pay when your order is delivered. Available for orders in Pune.</p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
+              Pay when your order is delivered. Available for orders in {clinic.codNoteCity}.
+            </p>
           )}
 
           {error && <p className="text-red-500 text-sm">{error}</p>}

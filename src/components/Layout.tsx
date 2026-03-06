@@ -9,7 +9,7 @@ import {
   X,
   Facebook,
   Instagram,
-  Twitter,
+  MessageCircle,
   Mail,
   Phone,
   MapPin,
@@ -36,6 +36,7 @@ import {
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
+import clinic from '../content/clinic.json';
 
 // --- Shared Components ---
 
@@ -98,8 +99,8 @@ export const Navbar = ({
             >
               <Leaf className='text-primary w-5 h-5 min-[375px]:w-6 min-[375px]:h-6 sm:w-8 sm:h-8 shrink-0' />
               <span className='font-bold text-sm min-[375px]:text-base sm:text-xl tracking-tight text-slate-900 dark:text-white truncate max-w-[140px] min-[375px]:max-w-[180px] sm:max-w-none'>
-                Dr. Veda{' '}
-                <span className='text-primary font-normal'>Wellness</span>
+                {clinic.brandShort}{' '}
+                <span className='text-primary font-normal'>{clinic.brandSuffix}</span>
               </span>
             </NavLink>
             <div className='hidden lg:flex items-center space-x-5 xl:space-x-6'>
@@ -314,7 +315,7 @@ export const Navbar = ({
               {/* Footer */}
               <div className='px-5 py-3 border-t border-slate-200 dark:border-slate-700 shrink-0'>
                 <p className='text-xs text-slate-400 dark:text-slate-500'>
-                  Dr. Veda Wellness — Holistic healing
+                  {clinic.taglineMobile}
                 </p>
               </div>
             </motion.div>
@@ -334,17 +335,16 @@ export const Footer = () => {
             <div className='flex items-center gap-2'>
               <Leaf className='text-primary w-5 h-5 sm:w-6 sm:h-6 shrink-0' />
               <span className='font-bold text-base sm:text-lg text-slate-900 dark:text-white'>
-                Dr. Veda Wellness
+                {clinic.name}
               </span>
             </div>
             <p className='text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed'>
-              Authentic Ayurvedic care combining traditional therapies with
-              modern medical standards for holistic healing.
+              {clinic.footerDescription}
             </p>
             <div className='flex gap-3 pt-1'>
               <Facebook className='w-4 h-4 sm:w-5 sm:h-5 text-slate-400 dark:text-slate-500 hover:text-primary cursor-pointer transition-colors' />
               <Instagram className='w-4 h-4 sm:w-5 sm:h-5 text-slate-400 dark:text-slate-500 hover:text-primary cursor-pointer transition-colors' />
-              <Twitter className='w-4 h-4 sm:w-5 sm:h-5 text-slate-400 dark:text-slate-500 hover:text-primary cursor-pointer transition-colors' />
+              <MessageCircle className='w-4 h-4 sm:w-5 sm:h-5 text-slate-400 dark:text-slate-500 hover:text-primary cursor-pointer transition-colors' />
             </div>
           </div>
           <div>
@@ -353,8 +353,8 @@ export const Footer = () => {
             </h4>
             <ul className='space-y-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400'>
               <li>
-                <NavLink to='/about' className='hover:text-primary transition-colors'>
-                  About Dr. Sharma
+              <NavLink to='/about' className='hover:text-primary transition-colors'>
+                  About Dr. Shalaka Chandwadkar
                 </NavLink>
               </li>
               <li>
@@ -382,16 +382,16 @@ export const Footer = () => {
               <li className='flex items-start gap-2'>
                 <MapPin className='text-primary w-4 h-4 mt-0.5 flex-shrink-0' />
                 <span className='break-words'>
-                  9 Avenues Commercial Building, Neel 9, Above CCD, 2nd Floor, Wakad, Pune 411057
+                  {clinic.address}
                 </span>
               </li>
               <li className='flex items-center gap-2'>
                 <Phone className='text-primary w-4 h-4 shrink-0' />
-                <span>+91 7397826833</span>
+                <span>{clinic.phone}</span>
               </li>
               <li className='flex items-center gap-2'>
                 <Mail className='text-primary w-4 h-4 shrink-0' />
-                <span>info@drwellness.com</span>
+                <span>{clinic.email}</span>
               </li>
             </ul>
           </div>
@@ -419,7 +419,7 @@ export const Footer = () => {
         </div>
         <div className='border-t border-slate-100 dark:border-slate-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left'>
           <p className='text-xs text-slate-400 dark:text-slate-500 order-2 sm:order-1'>
-            © 2023 Dr. Veda Wellness. All rights reserved.
+            {clinic.copyrightText}
           </p>
           <div className='flex gap-4 sm:gap-6 text-xs text-slate-400 dark:text-slate-500 order-1 sm:order-2'>
             <span className='hover:text-primary cursor-pointer transition-colors'>

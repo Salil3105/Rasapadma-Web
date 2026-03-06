@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { TREATMENTS, TESTIMONIALS } from '../constants';
 import { ImageWithFallback } from './ImageWithFallback';
+import doctor from '../content/doctor.json';
 
 interface HomeProps {
   onStartJourney: () => void;
@@ -54,7 +55,7 @@ export const Home = ({
                 </span>
               </h1>
               <p className='text-base min-[375px]:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0'>
-                Experience holistic healing with Dr. Ananya Sharma, MD (BAMS).
+                {doctor.heroLine}
                 Bridging ancient Vedic wisdom with modern medical understanding
                 for your complete well-being.
               </p>
@@ -207,7 +208,7 @@ export const Home = ({
             <div className='w-full lg:w-1/2 relative'>
               <div className='relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] max-w-md mx-auto'>
                 <ImageWithFallback
-                  alt='Dr. Ananya Sharma'
+                  alt={doctor.shortName}
                   className='w-full h-full object-cover'
                   src='https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&w=800&q=80'
                 />
@@ -226,7 +227,7 @@ export const Home = ({
             </div>
             <div className='w-full lg:w-1/2'>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4'>
-                Meet Dr. Ananya Sharma
+                {`Meet ${doctor.shortName}`}
               </h2>
               <h3 className='text-base sm:text-lg text-primary font-medium mb-4'>
                 Bridging the gap between traditional wisdom and modern
@@ -234,11 +235,7 @@ export const Home = ({
               </h3>
               <div className='space-y-4 text-sm sm:text-base text-slate-600 dark:text-slate-300'>
                 <p>
-                  With over 15 years of clinical experience, Dr. Sharma is a
-                  distinguished practitioner dedicated to the art and science of
-                  Ayurveda. Her journey began at the prestigious National
-                  Institute of Ayurveda, where she earned her BAMS degree with
-                  distinction.
+                  {doctor.bioParagraph}
                 </p>
                 <p>
                   "I believe that true health is not merely the absence of

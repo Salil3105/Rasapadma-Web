@@ -4,6 +4,7 @@ import { ArrowLeft, Star, ShoppingCart, Verified } from 'lucide-react';
 import { Product } from '../constants';
 import { ImageWithFallback } from './ImageWithFallback';
 import { useCart } from '../context/CartContext';
+import doctor from '../content/doctor.json';
 
 interface ProductDetailProps {
   product: Product;
@@ -92,7 +93,7 @@ export const ProductDetail = ({ product, onBack }: ProductDetailProps) => {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base mb-0.5">Doctor Verified</h3>
                     <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                      Formulated and tested by Dr. Veda (MD, BAMS). 100% natural ingredients sourced from certified organic farms.
+                      {doctor.verifiedLine} 100% natural ingredients sourced from certified organic farms.
                     </p>
                   </div>
                 </div>

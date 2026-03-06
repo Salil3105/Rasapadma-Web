@@ -1,12 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Mail, Phone, Leaf, ExternalLink } from 'lucide-react';
+import clinic from '../content/clinic.json';
 
-const CLINIC_ADDRESS = '9 Avenues Commercial Building, Neel 9, Above CCD, 2nd Floor, Wakad, Pune 411057';
-const CLINIC_EMAIL = 'info@drwellness.com';
-const CLINIC_PHONE = '+91 7397826833';
-const CLINIC_MAP_LINK = 'https://maps.app.goo.gl/PSgtkBo1DucpkPAT8';
-const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(CLINIC_ADDRESS)}&output=embed&z=17`;
+const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
+  clinic.address
+)}&output=embed&z=17`;
 
 export const Contact = () => {
   return (
@@ -37,7 +36,7 @@ export const Contact = () => {
             className="space-y-6"
           >
             <a
-              href={CLINIC_MAP_LINK}
+              href={clinic.mapLink}
               target="_blank"
               rel="noopener noreferrer"
               className="block p-6 rounded-xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/20 transition-all group"
@@ -48,7 +47,7 @@ export const Contact = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Address</h3>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{CLINIC_ADDRESS}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{clinic.address}</p>
                   <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-2 group-hover:underline">
                     View on map <ExternalLink className="w-3 h-3" />
                   </span>
@@ -57,7 +56,7 @@ export const Contact = () => {
             </a>
 
             <a
-              href={`mailto:${CLINIC_EMAIL}`}
+              href={`mailto:${clinic.email}`}
               className="block p-6 rounded-xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/20 transition-all group"
             >
               <div className="flex items-start gap-4">
@@ -66,7 +65,7 @@ export const Contact = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Email</h3>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">{CLINIC_EMAIL}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{clinic.email}</p>
                   <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-2 group-hover:underline">
                     Send email <ExternalLink className="w-3 h-3" />
                   </span>
@@ -75,7 +74,7 @@ export const Contact = () => {
             </a>
 
             <a
-              href={`tel:${CLINIC_PHONE.replace(/\s/g, '')}`}
+              href={`tel:${clinic.phone.replace(/\s/g, '')}`}
               className="block p-6 rounded-xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/20 transition-all group"
             >
               <div className="flex items-start gap-4">
@@ -84,7 +83,7 @@ export const Contact = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Phone</h3>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">{CLINIC_PHONE}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{clinic.phone}</p>
                   <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-2 group-hover:underline">
                     Call now <ExternalLink className="w-3 h-3" />
                   </span>
@@ -109,11 +108,11 @@ export const Contact = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Dr. Veda Wellness Clinic Location"
+                title={clinic.mapTitle}
                 className="absolute inset-0"
               />
               <a
-                href={CLINIC_MAP_LINK}
+                href={clinic.mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute bottom-4 left-4 px-4 py-2 bg-white dark:bg-surface-dark rounded-lg shadow-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-primary hover:text-white transition-colors flex items-center gap-2"

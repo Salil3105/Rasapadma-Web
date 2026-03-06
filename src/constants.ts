@@ -46,6 +46,8 @@ export interface BlogPost {
   readTime?: string;
 }
 
+import doctor from './content/doctor.json';
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: '1',
@@ -60,7 +62,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
 Understanding your constitution helps you make better choices—from diet and exercise to daily routines.`,
     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
-    author: 'Dr. Aditi Sharma',
+    author: doctor.blogAuthor,
     authorTitle: 'B.A.M.S., M.D. (Ayurveda)',
     publishedAt: '2024-01-15',
     category: 'Wellness',
@@ -81,7 +83,7 @@ Modern lifestyle—processed foods, stress, pollution—weakens Agni (digestive 
 **Who Benefits**
 Those with chronic digestive issues, skin problems, joint pain, or general fatigue often see remarkable improvement.`,
     image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80',
-    author: 'Dr. Aditi Sharma',
+    author: doctor.blogAuthor,
     authorTitle: 'B.A.M.S., M.D. (Ayurveda)',
     publishedAt: '2024-02-01',
     category: 'Detox',
@@ -101,7 +103,7 @@ Those with chronic digestive issues, skin problems, joint pain, or general fatig
 **How to Use**
 Quality matters. Choose standardized extracts from reputable brands. Dosage typically ranges from 300–600 mg daily. Consult an Ayurvedic practitioner for personalized guidance.`,
     image: 'https://images.unsplash.com/photo-1584017945366-b97b0e35a63b?auto=format&fit=crop&w=800&q=80',
-    author: 'Dr. Aditi Sharma',
+    author: doctor.blogAuthor,
     authorTitle: 'B.A.M.S., M.D. (Ayurveda)',
     publishedAt: '2024-02-18',
     category: 'Herbs & Research',
@@ -255,7 +257,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '1',
     name: 'Sarah Jenkins',
     treatment: 'Digestive Health',
-    content: "Dr. Sharma's approach to my chronic digestive issues was a revelation. Unlike other treatments, she focused on my diet and stress levels. I feel lighter and more energetic than I have in years.",
+    content: doctor.testimonialsDigestive,
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80',
     rating: 5,
   },
@@ -271,7 +273,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '3',
     name: 'Priya Patel',
     treatment: 'Skin Care',
-    content: "I was skeptical about herbal medicines, but Dr. Ananya explained the science behind them. My skin condition has cleared up significantly without any harsh chemicals.",
+    content: doctor.testimonialsHerbal,
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80',
     rating: 4.5,
   },

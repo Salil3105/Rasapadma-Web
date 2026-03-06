@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Leaf, School, Award, Heart, Target, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
+import doctor from '../content/doctor.json';
+import clinic from '../content/clinic.json';
 
 interface AboutProps {
   onBookConsultation: () => void;
@@ -20,7 +22,9 @@ export const About = ({ onBookConsultation }: AboutProps) => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-primary font-semibold uppercase tracking-wider text-xs sm:text-sm">Our Story</span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mt-2 mb-3">About Dr. Veda Wellness</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mt-2 mb-3">
+              {`About ${doctor.shortName}`}
+            </h1>
             <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300">
               Where ancient Ayurvedic wisdom meets compassionate, personalized care for modern wellness.
             </p>
@@ -28,7 +32,7 @@ export const About = ({ onBookConsultation }: AboutProps) => {
         </div>
       </section>
 
-      {/* Dr. Ananya Sharma - Main Bio */}
+      {/* Doctor - Main Bio */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
@@ -40,7 +44,7 @@ export const About = ({ onBookConsultation }: AboutProps) => {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] max-w-md mx-auto">
                 <ImageWithFallback
-                  alt="Dr. Ananya Sharma"
+                  alt={doctor.shortName}
                   className="w-full h-full object-cover"
                   src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&w=800&q=80"
                 />
@@ -57,12 +61,12 @@ export const About = ({ onBookConsultation }: AboutProps) => {
               viewport={{ once: true }}
               className="w-full lg:w-1/2"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">Meet Dr. Ananya Sharma</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+                {`Meet ${doctor.shortName}`}
+              </h2>
               <p className="text-base sm:text-lg text-primary font-medium mb-4">Bridging traditional wisdom with modern lifestyle.</p>
               <div className="space-y-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                <p>
-                  With over 15 years of clinical experience, Dr. Ananya Sharma is a distinguished Ayurvedic practitioner dedicated to the art and science of holistic healing. Her journey began at the prestigious National Institute of Ayurveda, where she earned her BAMS degree with distinction and a gold medal.
-                </p>
+                <p>{doctor.bioParagraph}</p>
                 <p>
                   "I believe that true health is not merely the absence of disease, but a state of vibrant balance between body, mind, and spirit. My approach combines detailed pulse diagnosis (Nadi Pariksha) with personalized diet and lifestyle plans tailored to each individual."
                 </p>
@@ -100,7 +104,7 @@ export const About = ({ onBookConsultation }: AboutProps) => {
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3">Our Mission & Values</h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              At Dr. Veda Wellness, we are committed to making authentic Ayurveda accessible and effective for everyone.
+              {`At ${clinic.name}, we are committed to making authentic Ayurveda accessible and effective for everyone.`}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -139,7 +143,7 @@ export const About = ({ onBookConsultation }: AboutProps) => {
           >
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Our Story</h2>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-sm sm:text-base">
-              Dr. Veda Wellness was founded with a simple vision: to bring the healing power of Ayurveda to people seeking a natural, holistic path to wellness. What started as a solo practice has grown into a trusted center for authentic Ayurvedic care in Pune, serving thousands of patients over the years.
+              {`${clinic.name} was founded with a simple vision: to bring the healing power of Ayurveda to people seeking a natural, holistic path to wellness. What started as a solo practice has grown into a trusted center for authentic Ayurvedic care in ${clinic.city}, serving thousands of patients over the years.`}
             </p>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
               Today, we continue to blend ancient wisdom with modern diagnostics, offering personalized consultations, specialized treatments, and doctor-formulated wellness products—all under one roof.

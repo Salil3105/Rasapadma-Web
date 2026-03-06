@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Star, Leaf, ChevronLeft, ChevronRight, CheckCircle, HelpCircle, CreditCard, Smartphone, Shield, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
+import doctor from '../content/doctor.json';
 
 type PaymentMethod = 'card' | 'upi' | 'cod';
 
@@ -74,13 +75,13 @@ export const Booking = () => {
               <div className="relative z-10 flex flex-col items-center text-center mt-4">
                 <div className="w-32 h-32 rounded-full border-4 border-white dark:border-slate-600 shadow-md overflow-hidden mb-4 relative">
                   <ImageWithFallback 
-                    alt="Dr. Aditi Sharma" 
+                    alt={doctor.shortName} 
                     className="w-full h-full object-cover" 
                     src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&w=800&q=80" 
                   />
                 </div>
-                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">Dr. Aditi Sharma</h2>
-                <p className="text-sm font-medium text-primary mb-2">B.A.M.S., M.D. (Ayurveda)</p>
+                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">{doctor.shortName}</h2>
+                <p className="text-sm font-medium text-primary mb-2">{doctor.degrees}</p>
                 <div className="flex items-center space-x-1 text-yellow-500 mb-4 text-sm">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                   <span className="text-slate-400 ml-2">(120+ Reviews)</span>
@@ -126,9 +127,9 @@ export const Booking = () => {
               </ul>
             </div>
 
-            <div className="relative pl-4 border-l-4 border-primary/30 py-1">
+              <div className="relative pl-4 border-l-4 border-primary/30 py-1">
               <p className="italic text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                "Dr. Sharma's consultation was transformative. She identified root causes that other doctors missed for years."
+                "Dr. Shalaka Chandwadkar's consultation was transformative. She identified root causes that other doctors missed for years."
               </p>
               <p className="text-xs font-bold text-primary mt-2">— Sarah Jenkins, Patient</p>
             </div>

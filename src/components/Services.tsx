@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Leaf, ArrowRight } from 'lucide-react';
 import { TREATMENTS } from '../constants';
 import { ImageWithFallback } from './ImageWithFallback';
+import doctor from '../content/doctor.json';
 
 interface ServicesProps {
   onTreatmentClick: (treatmentId: string) => void;
@@ -100,7 +101,7 @@ export const Services = ({ onTreatmentClick, onBookConsultation }: ServicesProps
           >
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white dark:text-white mb-3">Ready to Begin Your Healing Journey?</h2>
             <p className="text-white/90 dark:text-slate-300 mb-6 text-sm sm:text-base max-w-xl mx-auto">
-              Book a consultation with Dr. Ananya Sharma and discover a personalized wellness plan designed just for you.
+              {`Book a consultation with ${doctor.shortName} and discover a personalized wellness plan designed just for you.`}
             </p>
             <button
               onClick={onBookConsultation}
